@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
 
 {% block content %}
 
-<h1>PanicRoom</h1>
+<section class="logo-container">
+  <div class="fear-container">
+    <img src="{% static 'images/skull.png' %}" alt="skull" />
+  </div>
+  <img 
+    src="{% static 'images/PanicRoom-02.png' %}" 
+    alt="Text reads: PanicRoom"
+  />
+</section>
 
 {% endblock %}
