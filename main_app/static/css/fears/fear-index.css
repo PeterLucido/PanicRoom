@@ -1,5 +1,5 @@
 .card-container {
-  padding: 0 30px;
+  padding: 50px 0 50px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -7,13 +7,18 @@
 
 .card {
   width: 275px;
+  height: 275px;
   margin: 10px;
   border: var(--borders);
 }
 
 .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   width: 100%;
+  height: 100%;
 }
 
 .usr-img {
@@ -23,15 +28,17 @@
 
 .card > a {
   text-decoration: none;
-  color: var(--text-color);
+  color: white;
 }
 
 .card h2 {
+  color: white;
   margin: 10px 0;
   font-size: var(--font-xl);
 }
 
 .card p {
+  color: white;
   margin: 5px 0;
   font-size: var(--font-reg);
 }

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block head %}
@@ -11,24 +12,15 @@
 
 {% block content %}
 
-<section class="page-header">
-  <h1>Fear List</h1>
-  <img src="{% static 'images/PanicRoom-02.png' %}" alt="Panic Room Logo" />
-</section>
-
 <section class="card-container">
   {% for fear in fears %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/sk8r-boi-fear.svg' %}" 
-            alt="A skater boy fear"
-          >
+      <a href="/fears/{{ fear.id }}">
+        <div class="card-content">
+          <h2 class="card-title">{{ fear.name }}</h2>
+          <p><small>{{ fear.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ fear.name }}</h2>
-        <p><small>{{ fear.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>
