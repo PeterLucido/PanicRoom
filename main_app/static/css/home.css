@@ -1,9 +1,11 @@
 main {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   height: 100%;
+  background-color: black;
 }
 
 main > section {
@@ -12,22 +14,34 @@ main > section {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .header-logo-container {
   display: none;
 }
 
-.logo-container {
-  max-width: 10px;
-}
-
 .fear-container {
   width: 20%;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+
 .login {
+  background-color: #50B748;
+  border: #50B748;
   display: flex;
   flex-direction: column;
   justify-content: center;

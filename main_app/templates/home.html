@@ -7,14 +7,22 @@
 
 {% block content %}
 
-<section class="logo-container">
-  <div class="fear-container">
-    <img src="{% static 'images/skull.png' %}" alt="skull" />
-  </div>
+
+<div class="image-container">
   <img 
-    src="{% static 'images/PanicRoom-02.png' %}" 
-    alt="Text reads: PanicRoom"
+  src="{% static 'images/PanicRoom-02.png' %}" 
+  alt="Text reads: PanicRoom"
   />
+</div>
+
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit" class="btn submit">Login</button>
+  </form>
 </section>
 
 {% endblock %}
