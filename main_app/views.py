@@ -2,52 +2,49 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin 
 
-# Add the following import
+from .models import Fear
 
 # Define the home view
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('fear-index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'signup.html', context)
+
 class Home(LoginView):
   template_name = 'home.html'
 
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def fear_index(request):
-  return render(request, 'fears/index.html', { 'fears': fears })
+  fears = Fear.objects.filter(user=request.user)
+  return render(request, 'fears/index.html', {'fears': fears})
 
-class Fear:
+@login_required
+def fear_detail(request, fear_id):
+  fear = Fear.objects.get(id=fear_id)
+  return render(request, 'fears/detail.html', {'fear': fear})
 
-  def __init__(self, name, description, id):
-    self.name = name
-    self.description = description
-    self.conquered = False
+class FearCreate(LoginRequiredMixin, CreateView):
+  model = Fear
+  fields = ['name', 'description', 'conquered']
+  success_url = '/fears/'
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
-
-fears = [
-  Fear('Spiders', '8 legs, 8 eyes, 8 reasons to be afraid', True),
-  Fear('Heights', 'Don\'t look down', False),
-  Fear('Clowns', 'They\'re not funny', False),
-  Fear('Needles', 'They\'re sharp', False),
-  Fear('Flying', 'It\'s not natural', False),
-  Fear('Public Speaking', 'Just imagine everyone in their underwear', False),
-]
-
-def signup(request):
-  error_message = ''
-  if request.method == 'POST':
-    # This is how to create a 'user' form object
-    # that includes the data from the browser
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-      # This will add the user to the database
-      user = form.save()
-      # This is how we log a user in
-      login(request, user)
-      return redirect('fear-index')
-    else:
-      error_message = 'Invalid sign up - try again'
-  # A bad POST or a GET request, so render signup.html with an empty form
-  form = UserCreationForm()
-  context = {'form': form, 'error_message': error_message}
-  return render(request, 'signup.html', context)
-  # Same as: return render(request, 'signup.html', {'form': form, 'error_message': error_message})

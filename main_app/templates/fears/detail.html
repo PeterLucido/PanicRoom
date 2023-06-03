@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/fears/fear-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="fear-container">
+  <div class="fear-details">
+    <div class="img-container">
+      <img 
+      src="{% if fear.image_url %}
+      {{ fear.image_url }}
+      {% else %}{% static 'images/Skull.png' %}
+      {% endif %}" alt="{{ fear.name }} image"
+      >
+  </div>
+    <h1>{{ fear.name }}</h1>
+    <p>{{ fear.description }}</p>
+    {% if fear.conquered %}
+      <p>This fear has been conquered.</p>
+    {% else %}
+      <p>This fear has not yet been conquered.</p>
+    {% endif %}
+    <button></button>
+  </div>
+</section>
+
+{% endblock %}

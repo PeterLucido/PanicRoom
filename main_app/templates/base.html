@@ -26,7 +26,7 @@
       <ul>
         {% if user.is_authenticated %}
           <li><a href="{% url 'fear-index' %}">All Fears</a></li>
-          {% comment %} <li><a href="{% url 'fear-create' %}">Add a Fear</a></li> {% endcomment %}
+          <li><a href="{% url 'fear-create' %}">Add a Fear</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'logout' %}">Log out</a></li>
         {% else %}

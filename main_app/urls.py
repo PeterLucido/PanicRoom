@@ -9,4 +9,6 @@ urlpatterns = [
   path('fears/', views.fear_index, name='fear-index'),
   path('accounts/', include('django.contrib.auth.urls')),
   path('accounts/signup', views.signup, name='signup'),
+  path('fears/<int:fear_id>/', views.fear_detail, name='fear-detail'),
+  path('fears/create/', views.FearCreate.as_view(), name='fear-create'),
 ]
