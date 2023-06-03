@@ -20,15 +20,20 @@
       {% else %}{% static 'images/Skull.png' %}
       {% endif %}" alt="{{ fear.name }} image"
       >
-  </div>
-    <h1>{{ fear.name }}</h1>
-    <p>{{ fear.description }}</p>
-    {% if fear.conquered %}
-      <p>This fear has been conquered.</p>
-    {% else %}
-      <p>This fear has not yet been conquered.</p>
-    {% endif %}
-    <button></button>
+    </div>
+    <div class="text-container">
+      <h1>{{ fear.name }}</h1>
+      <p>{{ fear.description }}</p>
+      {% if fear.conquered %}
+        <p>This fear has been conquered.</p>
+      {% else %}
+        <p>This fear has not yet been conquered.</p>
+      {% endif %}
+      <div class="fear-actions">
+        <a href="{% url 'fear-update' fear.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'fear-delete' fear.id %}" class="btn danger">Delete</a>
+      </div>
+    </div>
   </div>
 </section>
 

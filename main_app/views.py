@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView  
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin 
 
@@ -48,3 +48,10 @@ class FearCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
+class FearUpdate(LoginRequiredMixin, UpdateView):
+  model = Fear
+  fields = ['name', 'description', 'conquered']
+
+class FearDelete(LoginRequiredMixin, DeleteView):
+  model = Fear
+  success_url = '/fears/'

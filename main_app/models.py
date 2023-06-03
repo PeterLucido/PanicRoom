@@ -11,3 +11,6 @@ class Fear(models.Model):
 
   def __str__(self):
     return self.name
+  
+  def get_absolute_url(self):
+    return reverse('fear-detail', kwargs={'fear_id': self.id})

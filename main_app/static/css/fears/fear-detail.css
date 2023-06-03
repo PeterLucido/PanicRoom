@@ -18,13 +18,21 @@
 
 .fear-details {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: auto;
   height: auto;
   margin: 10px;
   border: var(--borders);
+  padding: 10px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .fear-details h1 {
