@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/fears/fear-delete.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<div class="fear-delete-container">
+  <div class="delete-header">
+    <h2>Are you sure you want to delete {{ fear.name }}?</h2>
+  </div>
+  <div class="img-container">
+    <img 
+    src="{% if fear.image_url %}
+    {{ fear.image_url }}
+    {% else %}{% static 'images/Skull.png' %}
+    {% endif %}" alt="{{ fear.name }} image"
+    class="fear-img"
+    >
+  </div>
+  <form action="" method="post" class="delete-form">
+    {% csrf_token %}
+    <a 
+      href="{% url 'fear-detail' fear.id %}" 
+      class="btn secondary"
+    >
+      Cancel
+    </a>
+    <button type="submit" class="btn danger">Yes - Delete!</button>
+  </form>
+</div>
+
+{% endblock %}

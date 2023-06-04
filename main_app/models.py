@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Fear(models.Model):
-  name = models.CharField(max_length=100)
+  name = models.CharField(max_length=15)
   description = models.TextField(max_length=250)
   conquered = models.BooleanField(default=False)
   user = models.ForeignKey(User, on_delete=models.CASCADE)

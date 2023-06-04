@@ -11,10 +11,17 @@
 {% endblock %}
 
 {% block content %}
-
 <section class="card-container">
   {% for fear in fears %}
     <div class="card">
+      <div class="img-container">
+        <img 
+        src="{% if fear.image_url %}
+        {{ fear.image_url }}
+        {% else %}{% static 'images/Skull.png' %}
+        {% endif %}" alt="{{ fear.name }} image"
+        >
+      </div>
       <a href="/fears/{{ fear.id }}">
         <div class="card-content">
           <h2 class="card-title">{{ fear.name }}</h2>
@@ -22,6 +29,10 @@
         </div>
       </a>
     </div>
+  {% empty %}
+  <div class="fear-msg">
+    <h1>A journey of courage begins here. Ready to list down your fears?</h1>
+  </div>
   {% endfor %}
 </section>
 
