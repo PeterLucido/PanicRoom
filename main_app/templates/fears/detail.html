@@ -15,8 +15,8 @@
   <div class="fear-details">
     <div class="img-container">
       <img 
-      src="{% if fear.image_url %}
-      {{ fear.image_url }}
+      src="{% if fear.photo.url %}
+      {{ fear.photo.url }}
       {% else %}{% static 'images/Skull.png' %}
       {% endif %}" alt="{{ fear.name }} image"
       >
@@ -34,6 +34,20 @@
         <a href="{% url 'fear-delete' fear.id %}" class="btn danger">Delete</a>
       </div>
     </div>
+    <h3>Change {{ fear.name }}'s photo</h3>
+    <p id="file-name"></p>
+    <form 
+      action="{% url 'add-photo' fear.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input">
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
   </div>
 </section>
 

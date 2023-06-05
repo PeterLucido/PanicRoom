@@ -5,8 +5,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView  
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin 
+from .models import Fear, Photo
+import uuid
+import boto3
 
-from .models import Fear
+S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
+BUCKET = 'peter-fear-collector'
 
 # Define the home view
 
@@ -38,7 +42,8 @@ def fear_index(request):
 @login_required
 def fear_detail(request, fear_id):
   fear = Fear.objects.get(id=fear_id)
-  return render(request, 'fears/detail.html', {'fear': fear})
+  photos = Photo.objects.filter(fear_id=fear_id)
+  return render(request, 'fears/detail.html', {'fear': fear, 'photos': photos})
 
 class FearCreate(LoginRequiredMixin, CreateView):
   model = Fear
@@ -55,3 +60,24 @@ class FearUpdate(LoginRequiredMixin, UpdateView):
 class FearDelete(LoginRequiredMixin, DeleteView):
   model = Fear
   success_url = '/fears/'
+
+def add_photo(request, fear_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = f"{str(uuid.uuid4())}{photo_file.name[photo_file.name.rfind('.'):]}"
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      # Remove existing fear photo if any
+      fear_photo = Photo.objects.filter(fear_id=fear_id).first()
+      if fear_photo:
+          s3.delete_object(Bucket=BUCKET, Key=fear_photo.url.rsplit('/', 1)[1])
+          fear_photo.delete()
+      # Create new fear photo record
+      photo = Photo(url=url, fear_id=fear_id)
+      photo.save()
+    except Exception as err:
+      print('An error occurred uploading file to S3:', err)
+
+  return redirect('fear-detail', fear_id=fear_id)

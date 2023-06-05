@@ -11,4 +11,5 @@ urlpatterns = [
   path('fears/create/', views.FearCreate.as_view(), name='fear-create'),
   path('fears/<int:pk>/update/', views.FearUpdate.as_view(), name='fear-update'),
   path('fears/<int:pk>/delete/', views.FearDelete.as_view(), name='fear-delete'),
+  path('fears/<int:fear_id>/add_photo/', views.add_photo, name='add-photo'),
 ]
