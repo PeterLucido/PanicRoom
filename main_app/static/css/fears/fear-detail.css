@@ -19,31 +19,41 @@
 .fear-details {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  width: auto;
-  height: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* Allow elements to wrap if needed */
   margin: 10px;
   border: var(--borders);
   padding: 10px;
 }
 
 .text-container {
+  flex: 1; /* Let the container grow to fill available space */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 20px; /* Add some spacing between the image and text */
+}
+
+
+.fear-actions {
+  padding-bottom: 15px;
 }
 
 .fear-details h1 {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .fear-details p {
-  text-align: center;
-  padding: 5px;
+  flex: 1; /* Allow the paragraph to grow and fill available space */
+  text-align: left; /* Adjust the text alignment as needed */
+  width: 400px; /* Remove the fixed width to allow natural width */
+  padding: 10px;
+  margin-bottom: 20px;
 }
+
 
 .fear-details button {
   padding-bottom: 10px;
@@ -72,8 +82,17 @@
   color: white;
 }
 
+.add-photo {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
 p {
   color: white;
+  font-size: 25px;
+  height: 25px;
 }
 
 .subsection-title {
@@ -141,10 +160,6 @@ p {
   position: absolute;
   width: 0.1px;
   height: 0.1px;
-}
-
-#file-name {
-  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 768px) {

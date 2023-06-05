@@ -69,12 +69,10 @@ def add_photo(request, fear_id):
     try:
       s3.upload_fileobj(photo_file, BUCKET, key)
       url = f"{S3_BASE_URL}{BUCKET}/{key}"
-      # Remove existing fear photo if any
       fear_photo = Photo.objects.filter(fear_id=fear_id).first()
       if fear_photo:
           s3.delete_object(Bucket=BUCKET, Key=fear_photo.url.rsplit('/', 1)[1])
           fear_photo.delete()
-      # Create new fear photo record
       photo = Photo(url=url, fear_id=fear_id)
       photo.save()
     except Exception as err:
