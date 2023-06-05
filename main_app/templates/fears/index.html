@@ -16,8 +16,8 @@
     <div class="card">
       <div class="img-container">
         <img 
-        src="{% if fear.image_url %}
-        {{ fear.image_url }}
+        src="{% if fear.photo.url %}
+        {{ fear.photo.url }}
         {% else %}{% static 'images/Skull.png' %}
         {% endif %}" alt="{{ fear.name }} image"
         >
