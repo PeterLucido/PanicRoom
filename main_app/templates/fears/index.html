@@ -15,7 +15,7 @@
   {% for fear in fears %}
     <div class="card">
       <div class="img-container">
-        <img 
+        <img
         src="{% if fear.photo.url %}
         {{ fear.photo.url }}
         {% else %}{% static 'images/Skull.png' %}

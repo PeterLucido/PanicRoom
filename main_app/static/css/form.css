@@ -4,6 +4,12 @@
   width: 100%;
 }
 
+.page-header img {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
 table {
   padding: 0 40px;
   width: 100%;
