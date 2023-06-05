@@ -4,23 +4,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.fear-img {
-  width: 75%;
-  max-width: 350px;
-}
-
-.usr-img {
-  width: 100%;
-  border-radius: var(--card-border-radius);
+  color: white;
 }
 
 .fear-details {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   width: auto;
   height: auto;
   margin: 10px;
@@ -28,28 +19,14 @@
   padding: 10px;
 }
 
-.text-container {
+.fear-details .text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.fear-details h1 {
-  text-align: center;
-  padding: 10px;
-}
-
-.fear-details p {
-  text-align: center;
-  padding: 5px;
-}
-
-.fear-details button {
-  padding-bottom: 10px;
-}
-
-.img-container {
+.fear-details .img-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +34,7 @@
   height: 200px;
 }
 
-.img-container img {
+.fear-details .img-container img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -67,73 +44,16 @@
   margin-top: 20px;
 }
 
-.card > a {
-  text-decoration: none;
-  color: white;
-}
-
-p {
-  color: white;
-}
-
-.subsection-title {
+.add-photo {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  text-align: center;
+  color: white;
 }
 
-.subsection-content {
-  margin: 0 8px;
-}
-
-.color-block {
-  opacity: 0.8;
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
-}
-
-.fear-details h1 {
-  font-size: var(--font-xxl);
-  margin: 15px 0 3px;
-}
-
-.fear-details h2 {
-  font-size: var(--font-xl);
-  margin: 0 0 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.fear-details h3 {
-  margin: 20px 0 10px;
-  font-size: var(--font-l);
-}
-
-.fear-details p {
-  font-size: var(--font-reg);
-  margin: 5px 0;
-}
-
-.subsection-title img {
-  height: 42px;
-  margin-left: 8px;
-}
-
-.subsection-title img:first-of-type {
-  margin-left: 16px;
-}
-
-.subsection-content p,
-.subsection-content input,
-.subsection-content select {
-  font-size: var(--font-l);
-}
-
-.subsection-content input,
-.subsection-content select {
-  margin-left: 5px;
-  padding: 3px;
+.add-photo h3 {
+  margin-bottom: 15px;
+  color: white;
 }
 
 #file-input {
@@ -152,19 +72,12 @@ p {
     padding: 35px 30px;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
   }
 
-  .fear-img {
+  .fear-details .img-container {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
-  }
-
-}
-
-@media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
-    padding: 0 40px;
   }
 }

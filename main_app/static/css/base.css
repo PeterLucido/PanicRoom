@@ -152,6 +152,9 @@ h1{
   color: white;
 }
 
+.add-photo {
+  display: flex;
+}
 
 .page-content {
   font-size: var(--font-reg);
