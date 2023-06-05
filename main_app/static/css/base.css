@@ -69,6 +69,7 @@ main {
 
 h2 {
   font-size: var(--font-xl);
+  color: white
 }
 
 nav a {
@@ -106,7 +107,7 @@ nav li {
 
 .btn {
   font-size: var(--font-l);
-  padding: 8px 16px;
+  padding: 8px 8px;
   border-radius: 6px;
   border-width: 2px;
   border-style: solid;
@@ -115,7 +116,7 @@ nav li {
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .btn:hover {
@@ -154,7 +155,12 @@ h1{
 
 .add-photo {
   display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
 }
+
 
 .page-content {
   font-size: var(--font-reg);

@@ -4,14 +4,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+}
+
+.fear-img {
+  width: 75%;
+  max-width: 350px;
+}
+
+.usr-img {
+  width: 100%;
+  border-radius: var(--card-border-radius);
 }
 
 .fear-details {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: auto;
   height: auto;
   margin: 10px;
@@ -19,14 +28,28 @@
   padding: 10px;
 }
 
-.fear-details .text-container {
+.text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.fear-details .img-container {
+.fear-details h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+.fear-details p {
+  text-align: center;
+  padding: 5px;
+}
+
+.fear-details button {
+  padding-bottom: 10px;
+}
+
+.img-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +57,7 @@
   height: 200px;
 }
 
-.fear-details .img-container img {
+.img-container img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -44,16 +67,73 @@
   margin-top: 20px;
 }
 
-.add-photo {
-  display: flex;
-  align-items: center;
-  text-align: center;
+.card > a {
+  text-decoration: none;
   color: white;
 }
 
-.add-photo h3 {
-  margin-bottom: 15px;
+p {
   color: white;
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.subsection-content {
+  margin: 0 8px;
+}
+
+.color-block {
+  opacity: 0.8;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.fear-details h1 {
+  font-size: var(--font-xxl);
+  margin: 15px 0 3px;
+}
+
+.fear-details h2 {
+  font-size: var(--font-xl);
+  margin: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.fear-details h3 {
+  margin: 20px 0 10px;
+  font-size: var(--font-l);
+}
+
+.fear-details p {
+  font-size: var(--font-reg);
+  margin: 5px 0;
+}
+
+.subsection-title img {
+  height: 42px;
+  margin-left: 8px;
+}
+
+.subsection-title img:first-of-type {
+  margin-left: 16px;
+}
+
+.subsection-content p,
+.subsection-content input,
+.subsection-content select {
+  font-size: var(--font-l);
+}
+
+.subsection-content input,
+.subsection-content select {
+  margin-left: 5px;
+  padding: 3px;
 }
 
 #file-input {
@@ -75,9 +155,10 @@
     justify-content: center;
   }
 
-  .fear-details .img-container {
+  .fear-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
   }
+
 }
