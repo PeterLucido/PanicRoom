@@ -12,8 +12,6 @@ import boto3
 S3_BASE_URL = 'https://s3.us-east-2.amazonaws.com/'
 BUCKET = 'peter-fear-collector'
 
-# Define the home view
-
 def signup(request):
   error_message = ''
   if request.method == 'POST':

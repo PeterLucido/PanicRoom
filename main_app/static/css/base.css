@@ -52,6 +52,11 @@ header {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav {
   margin: 10px;
   width: 100%;
@@ -221,7 +226,6 @@ h1{
   .page-header h1 {
     font-size: var(--font-xtreme);
   }
-
 }
 
 @media only screen and (min-width: 1024px) {
@@ -251,5 +255,4 @@ h1{
     width: 256px;
     height: 35px;
   }
-
 }
