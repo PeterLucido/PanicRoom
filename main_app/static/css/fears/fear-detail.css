@@ -25,23 +25,22 @@
   margin: 10px;
   border: var(--borders);
   padding: 10px;
-  flex-grow: 1;
   flex-shrink: 1;
   min-height: auto;
   overflow: auto;
 }
 
 .text-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  max-width: 400px;
   margin-left: 20px;
   flex-shrink: 1;
   min-height: auto;
   overflow: auto;
-}g
+}
 
 .fear-actions {
   padding-bottom: 15px;
@@ -55,11 +54,9 @@
 .fear-details p {
   flex: 1;
   text-align: left;
-  width: 400px;
   padding: 10px;
   margin-bottom: 20px;
 }
-
 
 .fear-details button {
   padding-bottom: 10px;

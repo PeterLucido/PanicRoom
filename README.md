@@ -19,4 +19,3 @@ PanicRoom is your digital haven to face and document your fears. Whether you've 
 ## Future Enhancements
 
 In the pipeline, PanicRoom is gearing up to evolve into a more interactive social network where users can share their fears and draw inspiration from others. One of the planned features is the ability to organize events where users can face their fears in a supportive, communal setting.
-
