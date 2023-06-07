@@ -61,3 +61,8 @@
   -webkit-box-orient: vertical;
   padding: 8px;
 }
+
+.fear-msg {
+  color: #4cb747;
+  font-size: 25px;
+}

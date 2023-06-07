@@ -19,12 +19,16 @@
 .fear-details {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 10px;
   border: var(--borders);
   padding: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: auto;
+  overflow: auto;
 }
 
 .text-container {
@@ -34,8 +38,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   margin-left: 20px;
-}
-
+  flex-shrink: 1;
+  min-height: auto;
+  overflow: auto;
+}g
 
 .fear-actions {
   padding-bottom: 15px;
