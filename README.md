@@ -10,11 +10,18 @@ PanicRoom is your digital haven to face and document your fears. Whether you've 
 
 ## Technologies Used
 - Python
+- Django
 - Dockerfile
 - CSS
 - HTML
 - AWS
+- Boto3
+- Fly.io
+- Pyscopgy2
 - JavaScript
+- Gunicorn
+- Whitenoise
+- Bit.io
 
 ## Future Enhancements
 
