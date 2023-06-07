@@ -8,12 +8,11 @@
 {% block content %}
 
 <div class="page-header">
-  <img 
-    src="{% if fear.photo.url %}
-    {{ fear.photo.url }}
-    {% else %}{% static 'images/Skull.png' %}
-    {% endif %}" alt="{{ fear.name }} image"
-  >
+  {% if fear.photo.url %}
+    <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+  {% else %}
+    <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+  {% endif %}
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}

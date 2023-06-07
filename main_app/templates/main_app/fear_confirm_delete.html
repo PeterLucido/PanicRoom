@@ -2,11 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link 
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/fears/fear-delete.css' %}"
-/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/fears/fear-delete.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -16,13 +12,11 @@
     <h2>Are you sure you want to delete {{ fear.name }}?</h2>
   </div>
   <div class="img-container">
-    <img 
-    src="{% if fear.image_url %}
-    {{ fear.image_url }}
-    {% else %}{% static 'images/Skull.png' %}
-    {% endif %}" alt="{{ fear.name }} image"
-    class="fear-img"
-    >
+    {% if fear.photo.url %}
+      <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+    {% else %}
+      <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+    {% endif %}
   </div>
   <form action="" method="post" class="delete-form">
     {% csrf_token %}

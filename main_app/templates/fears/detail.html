@@ -2,11 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link 
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/fears/fear-detail.css' %}"
-/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/fears/fear-detail.css' %}" />
 <script defer src="{% static '/fear-detail.js' %}"></script>
 {% endblock %}
 
@@ -15,12 +11,11 @@
 <section class="fear-container">
   <div class="fear-details">
     <div class="img-container">
-      <img 
-      src="{% if fear.photo.url %}
-      {{ fear.photo.url }}
-      {% else %}{% static 'images/Skull.png' %}
-      {% endif %}" alt="{{ fear.name }} image"
-      >
+      {% if fear.photo.url %}
+        <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+      {% else %}
+        <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+      {% endif %}
     </div>
     <div class="text-container">
       <h1>{{ fear.name }}</h1>

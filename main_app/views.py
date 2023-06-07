@@ -59,6 +59,7 @@ class FearDelete(LoginRequiredMixin, DeleteView):
   model = Fear
   success_url = '/fears/'
 
+@login_required
 def add_photo(request, fear_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:

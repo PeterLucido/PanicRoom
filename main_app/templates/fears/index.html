@@ -3,11 +3,7 @@
 {% load static %}
 
 {% block head %}
-<link 
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/fears/fear-index.css' %}"
-/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/fears/fear-index.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -16,12 +12,11 @@
   <a href="/fears/{{ fear.id }}">
     <div class="card">
       <div class="img-container">
-        <img 
-        src="{% if fear.photo.url %}
-        {{ fear.photo.url }}
-        {% else %}{% static 'images/Skull.png' %}
-        {% endif %}" alt="{{ fear.name }} image"
-        >
+        {% if fear.photo.url %}
+          <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+        {% else %}
+          <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+        {% endif %}
       </div>
       <div class="card-content">
         <h2 class="card-title">{{ fear.name }}</h2>
