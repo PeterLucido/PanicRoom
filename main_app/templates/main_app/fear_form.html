@@ -9,9 +9,9 @@
 
 <div class="page-header">
   {% if fear.photo.url %}
-    <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+    <img src="{{fear.photo.url}}" alt="{{ fear.fear }} image">
   {% else %}
-    <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+    <img src="{% static 'images/skull.png' %}" alt="Skull Image">
   {% endif %}
 </div>
 <form action="" method="post" class="form-container">

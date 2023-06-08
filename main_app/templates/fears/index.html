@@ -13,13 +13,13 @@
     <div class="card">
       <div class="img-container">
         {% if fear.photo.url %}
-          <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+          <img src="{{fear.photo.url}}" alt="{{ fear.fear }} image">
         {% else %}
-          <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+          <img src="{% static 'images/skull.png' %}" alt="Skull Image">
         {% endif %}
       </div>
       <div class="card-content">
-        <h2 class="card-title">{{ fear.name }}</h2>
+        <h2 class="card-title">{{ fear.fear }}</h2>
         <p><small>{{ fear.description }}</small></p>
       </div>
     </div>

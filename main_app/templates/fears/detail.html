@@ -12,13 +12,13 @@
   <div class="fear-details">
     <div class="img-container">
       {% if fear.photo.url %}
-        <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+        <img src="{{fear.photo.url}}" alt="{{ fear.fear }} image">
       {% else %}
-        <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+        <img src="{% static 'images/skull.png' %}" alt="Skull Image">
       {% endif %}
     </div>
     <div class="text-container">
-      <h1>{{ fear.name }}</h1>
+      <h1>{{ fear.fear }}</h1>
       <p>{{ fear.description }}</p>
       {% if fear.conquered %}
         <p>This fear has been conquered.</p>
@@ -33,7 +33,7 @@
   </div>
 </section>
 <div class="add-photo">
-  <h2>Change {{ fear.name }}'s photo</h2>
+  <h2>Change {{ fear.fear }}'s photo</h2>
   <p id="file-name"></p>
   <form 
     action="{% url 'add-photo' fear.id %}"

@@ -9,13 +9,13 @@
 
 <div class="fear-delete-container">
   <div class="delete-header">
-    <h2>Are you sure you want to delete {{ fear.name }}?</h2>
+    <h2>Are you sure you want to delete {{ fear.fear }}?</h2>
   </div>
   <div class="img-container">
     {% if fear.photo.url %}
-      <img src="{{fear.photo.url}}" alt="{{ fear.name }} image">
+      <img src="{{fear.photo.url}}" alt="{{ fear.fear }} image">
     {% else %}
-      <img src="{% static 'images/Skull.png' %}" alt="Skull.png">
+      <img src="{% static 'images/skull.png' %}" alt="Skull Image">
     {% endif %}
   </div>
   <form action="" method="post" class="delete-form">

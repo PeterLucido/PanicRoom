@@ -45,7 +45,7 @@ def fear_detail(request, fear_id):
 
 class FearCreate(LoginRequiredMixin, CreateView):
   model = Fear
-  fields = ['name', 'description', 'conquered']
+  fields = ['fear', 'description', 'conquered']
   success_url = '/fears/'
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -53,7 +53,7 @@ class FearCreate(LoginRequiredMixin, CreateView):
 
 class FearUpdate(LoginRequiredMixin, UpdateView):
   model = Fear
-  fields = ['name', 'description', 'conquered']
+  fields = ['fear', 'description', 'conquered']
 
 class FearDelete(LoginRequiredMixin, DeleteView):
   model = Fear
