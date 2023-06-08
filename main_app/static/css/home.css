@@ -98,7 +98,6 @@ main > section {
     border: var(--borders);
     padding: 20px;
     border-radius: var(--card-border-radius);
-    box-shadow: var(--card-box-shadow);
     width: 500px;
   }
 
