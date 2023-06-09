@@ -34,7 +34,7 @@ def about(request):
 
 @login_required
 def fear_index(request):
-  fears = Fear.objects.filter(user=request.user)
+  fears = Fear.objects.filter(user=request.user).order_by('-created_at')
   return render(request, 'fears/index.html', {'fears': fears})
 
 @login_required

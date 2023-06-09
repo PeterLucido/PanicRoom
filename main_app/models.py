@@ -7,6 +7,7 @@ class Fear(models.Model):
   description = models.TextField(max_length=250)
   conquered = models.BooleanField(default=False)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
+  created_at = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return self.name
