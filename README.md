@@ -14,7 +14,7 @@ PanicRoom is your digital haven to face and document your fears. Whether you've 
 - AWS
 - Boto3
 - Fly.io
-- Pyscopgy2
+- Psycopg2
 - Gunicorn
 - Whitenoise
 - Bit.io
