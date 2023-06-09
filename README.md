@@ -22,6 +22,9 @@ PanicRoom is your digital haven to face and document your fears. Whether you've 
 - JavaScript
 - CSS
 - HTML
+- VS Code
+- Git
+- GitHub
 
 ## Future Enhancements
 
