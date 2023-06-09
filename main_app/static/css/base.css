@@ -2,14 +2,12 @@ html {
   box-sizing: border-box;
 }
 
-/* The Universal Selector */
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-/* Resets font size to be 62.5% of the user preference */
 :root {
   font-size: 62.5%;
 }
@@ -52,6 +50,7 @@ header {
   padding: 0;
 }
 
+
 a {
   text-decoration: none;
   color: inherit;
@@ -60,13 +59,25 @@ a {
 nav {
   margin: 10px;
   width: 100%;
+  
+}
 
+li {
+  font-size: 12px;
 }
 
 ul {
+  display: flex;
   margin: 0;
   list-style: none;
-  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -93px;
+}
+
+.helptext {
+  font-size: 12px;
 }
 
 main {
@@ -186,7 +197,6 @@ h1{
   margin-left: auto;
   margin-right: auto;
 }
-
 
 @media only screen and (min-width: 768px) {
   header {
