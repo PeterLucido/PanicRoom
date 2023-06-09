@@ -68,10 +68,20 @@ li {
   font-size: 12px;
 }
 
+.helptext {
+  font-size: 12px;
+}
+
+.errorlist {
+  margin-left: .5px;
+}
+
 ul {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   list-style: none;
-  padding: 0;
+  margin-left: -95px;
 }
 
 main {
@@ -93,6 +103,7 @@ nav a {
 
 nav ul {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -226,6 +237,7 @@ h1{
 
   nav ul {
     flex-wrap: nowrap;
+    flex-direction: row;
   }
 
   .page-header h1 {
