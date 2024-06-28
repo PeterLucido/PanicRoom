@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import environ
 import os
+import dj_database_url
 env = environ.Env()
 
 from pathlib import Path
@@ -81,14 +82,7 @@ WSGI_APPLICATION = 'PanicRoom.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('BIT_IO_DATABASE_NAME'),
-        'USER': env('BIT_IO_USER'),
-        'PASSWORD': env('BIT_IO_PASSWORD'),
-        'HOST': 'db.bit.io',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 

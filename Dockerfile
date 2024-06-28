@@ -20,6 +20,7 @@ RUN set -ex && \
     pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt && \
     rm -rf /root/.cache/
+
 COPY . /code
 
 ENV SECRET_KEY "Ck3UFT3ymebLP44nrpj0rICENY7yNoHIzJSrCg7wJs44LlqU9x"
